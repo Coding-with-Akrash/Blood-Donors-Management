@@ -1,0 +1,26 @@
+# Vercel ignore file
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+.mypy_cache/
+*.db
+*.sqlite
+*.sqlite3
+instance/
+migrations/
+*.log
+.env
+.env.local
+.env.*.local
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
