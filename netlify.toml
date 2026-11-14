@@ -1,0 +1,18 @@
+[build]
+  base = "frontend"
+  publish = "dist"
+  command = "pnpm build"
+
+[dev]
+  command = "pnpm dev"
+  port = 5173
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:5000/api/:splat"
+  status = 200

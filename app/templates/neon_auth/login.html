@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Login - LifeBlood{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="text-center mb-4">
+                <a href="{{ url_for('main.index') }}" class="text-decoration-none">
+                    <i class="fas fa-heartbeat fa-2x text-primary me-2"></i>
+                    <span class="h3 fw-bold text-dark">LifeBlood</span>
+                </a>
+                <p class="text-muted">Blood Donation Management System</p>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ 'danger' if category == 'error' else category }} alert-dismissible fade show" role="alert">
+                                    {{ message }}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form method="POST" action="{{ url_for('neon_auth.login') }}" novalidate>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-medium">Email Address</label>
+                            <input type="email" 
+                                   class="form-control form-control-lg" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="you@example.com" 
+                                   required 
+                                   autocomplete="email"
+                                   autofocus>
+                            <div class="form-text">We'll send a verification code if needed</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-medium">Password</label>
+                            <input type="password" 
+                                   class="form-control form-control-lg" 
+                                   id="password" 
+                                   name="password" 
+                                   placeholder="••••••••" 
+                                   required 
+                                   autocomplete="current-password">
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe" name="remember_me">
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="text-decoration-none small">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                            <i class="fas fa-sign-in-alt me-2"></i> Sign In
+                        </button>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <div class="text-center">
+                        <p class="text-muted mb-2">Don't have an account?</p>
+                        <div class="d-grid gap-2">
+                            <a href="{{ url_for('auth.register_donor') }}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-user-plus me-2"></i> Register as Donor
+                            </a>
+                            <a href="{{ url_for('auth.register_recipient') }}" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-hospital-user me-2"></i> Register as Recipient
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <small class="text-muted">
+                            <i class="fas fa-shield-alt me-1"></i> 
+                            Secure authentication via Neon Auth
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="{{ url_for('main.index') }}" class="text-decoration-none text-muted small">
+                    <i class="fas fa-arrow-left me-1"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core semantic colors - unified blood red palette */
+    --background: 0 0% 100%;
+    --foreground: 210 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 15%;
+    
+    /* Primary - Blood Red */
+    --primary: 0 78% 42%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 0 78% 38%;
+    --primary-light: 0 78% 94%;
+    --primary-muted: 0 50% 90%;
+    
+    /* Secondary - Neutral warm gray */
+    --secondary: 210 12% 94%;
+    --secondary-foreground: 210 15% 20%;
+    --secondary-hover: 210 12% 88%;
+    
+    /* Muted */
+    --muted: 210 12% 94%;
+    --muted-foreground: 210 10% 45%;
+    
+    /* Accent - Subtle blood red tint */
+    --accent: 0 50% 92%;
+    --accent-foreground: 0 78% 35%;
+    --accent-hover: 0 50% 88%;
+    
+    /* Destructive - Blood red for errors */
+    --destructive: 0 78% 42%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders & Inputs */
+    --border: 210 12% 88%;
+    --input: 210 12% 88%;
+    --ring: 0 78% 42%;
+    --ring-offset: 0 0% 100%;
+    
+    /* Radius */
+    --radius: 0.75rem;
+    
+    /* Blood-specific colors (semantic aliases) */
+    --blood-red: 0 78% 42%;
+    --blood-dark: 0 78% 38%;
+    --blood-light: 0 78% 94%;
+    --blood-muted: 0 50% 90%;
+    
+    /* Success - Emerald for positive states */
+    --success: 158 64% 42%;
+    --success-foreground: 0 0% 98%;
+    --success-light: 158 50% 93%;
+    
+    /* Warning - Amber for cautions */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    --warning-light: 38 100% 95%;
+    
+    /* Info - Blue for information */
+    --info: 210 90% 48%;
+    --info-foreground: 0 0% 98%;
+    --info-light: 210 90% 94%;
+    
+    /* Fonts */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  .dark {
+    --background: 210 20% 6%;
+    --foreground: 210 20% 95%;
+    --card: 210 20% 8%;
+    --card-foreground: 210 20% 95%;
+    --popover: 210 20% 8%;
+    --popover-foreground: 210 20% 95%;
+    
+    --primary: 0 78% 48%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 0 78% 52%;
+    --primary-light: 0 50% 12%;
+    --primary-muted: 0 40% 15%;
+    
+    --secondary: 210 15% 14%;
+    --secondary-foreground: 210 20% 85%;
+    --secondary-hover: 210 15% 18%;
+    
+    --muted: 210 15% 14%;
+    --muted-foreground: 210 10% 60%;
+    
+    --accent: 0 40% 12%;
+    --accent-foreground: 0 78% 55%;
+    --accent-hover: 0 40% 16%;
+    
+    --destructive: 0 78% 48%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 210 15% 18%;
+    --input: 210 15% 18%;
+    --ring: 0 78% 48%;
+    --ring-offset: 210 20% 6%;
+    
+    --blood-red: 0 78% 48%;
+    --blood-dark: 0 78% 52%;
+    --blood-light: 0 50% 12%;
+    --blood-muted: 0 40% 15%;
+    
+    --success: 158 55% 45%;
+    --success-foreground: 0 0% 98%;
+    --success-light: 158 40% 12%;
+    
+    --warning: 38 90% 55%;
+    --warning-foreground: 0 0% 10%;
+    --warning-light: 38 60% 12%;
+    
+    --info: 210 90% 52%;
+    --info-foreground: 0 0% 98%;
+    --info-light: 210 60% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  .slide-in-from-top {
+    animation: slide-in-from-top 0.3s ease-out;
+  }
+  .slide-in-from-bottom {
+    animation: slide-in-from-bottom 0.3s ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-from-top {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/20 text-primary;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% block title %}LifeBlood - Blood Donation Management{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="mb-4">
+                    <i class="fas fa-heartbeat fa-4x mb-3"></i>
+                    <h1 class="display-2 fw-bold mb-3">LifeBlood</h1>
+                    <p class="lead mb-4 opacity-75">Connecting donors with recipients. Saving lives, one donation at a time.</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{{ url_for('auth.register_donor') }}" class="btn btn-light btn-lg px-4">
+                            <i class="fas fa-user-plus me-2"></i>Become a Donor
+                        </a>
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-outline-light btn-lg px-4">
+                            <i class="fas fa-sign-in-alt me-2"></i>Login
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <i class="fas fa-tint text-primary fa-3x mb-3"></i>
+                        <h3 class="fw-bold text-primary">8+</h3>
+                        <p class="text-muted mb-0">Blood Types Supported</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <i class="fas fa-users text-success fa-3x mb-3"></i>
+                        <h3 class="fw-bold text-success">1000+</h3>
+                        <p class="text-muted mb-0">Active Donors</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <i class="fas fa-hospital text-warning fa-3x mb-3"></i>
+                        <h3 class="fw-bold text-warning">50+</h3>
+                        <p class="text-muted mb-0">Partner Hospitals</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body">
+                        <i class="fas fa-heart text-danger fa-3x mb-3"></i>
+                        <h3 class="fw-bold text-danger">24/7</h3>
+                        <p class="text-muted mb-0">Emergency Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Choose LifeBlood?</h2>
+            <p class="text-muted">A comprehensive platform for blood donation management</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-search fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Find Donors Fast</h5>
+                        <p class="text-muted">Advanced matching algorithm connects recipients with compatible donors in minutes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-calendar-check fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Schedule Donations</h5>
+                        <p class="text-muted">Easy appointment booking with automated reminders and eligibility tracking</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-shield-alt fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Secure & Compliant</h5>
+                        <p class="text-muted">HIPAA-compliant data protection with role-based access control</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-info bg-opacity-10 text-info rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Real-time Inventory</h5>
+                        <p class="text-muted">Live blood inventory tracking across all partner facilities</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-danger bg-opacity-10 text-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-bell fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Emergency Alerts</h5>
+                        <p class="text-muted">Instant notifications for critical blood shortages in your area</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center p-4">
+                        <div class="bg-secondary bg-opacity-10 text-secondary rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                            <i class="fas fa-certificate fa-2x"></i>
+                        </div>
+                        <h5 class="fw-bold">Donor Recognition</h5>
+                        <p class="text-muted">Badges, certificates, and milestone rewards for regular donors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Ready to Save Lives?</h2>
+        <p class="lead mb-4 opacity-75">Join thousands of donors making a difference every day</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="{{ url_for('auth.register_donor') }}" class="btn btn-light btn-lg px-5">
+                <i class="fas fa-heartbeat me-2"></i>Register as Donor
+            </a>
+            <a href="{{ url_for('auth.register_recipient') }}" class="btn btn-outline-light btn-lg px-5">
+                <i class="fas fa-hospital-user me-2"></i>Register as Recipient
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">How It Works</h2>
+            <p class="text-muted">Simple steps to connect donors with those in need</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <div class="position-relative">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">1</div>
+                    <h5 class="fw-bold">Register</h5>
+                    <p class="text-muted">Create your profile as a donor or recipient</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="position-relative">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">2</div>
+                    <h5 class="fw-bold">Verify</h5>
+                    <p class="text-muted">Complete medical screening and eligibility check</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-center">
+                <div class="position-relative">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.5rem; font-weight: bold;">3</div>
+                    <h5 class="fw-bold">Connect</h5>
+                    <p class="text-muted">Get matched and schedule donation or request blood</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if not current_user.is_authenticated %}
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-3">Already have an account?</h3>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-primary btn-lg px-5">
+            <i class="fas fa-sign-in-alt me-2"></i>Sign In
+        </a>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
